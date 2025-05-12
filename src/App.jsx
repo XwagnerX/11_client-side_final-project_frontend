@@ -7,7 +7,7 @@ function App() {
 
   const fetchBooks = async () => {
     try {
-      console.log('Iniciando petición GET a:', `${import.meta.env.VITE_API_URL}/Book`)
+      console.log('Iniciando petición GET a:', `${import.meta.env.VITE_API_URL}/Book#`)
       const response = await fetch(`${import.meta.env.VITE_API_URL}/Book`)
       const data = await response.json()
       console.log('Datos recibidos de la API:', {
