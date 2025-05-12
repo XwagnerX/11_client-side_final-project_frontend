@@ -11,9 +11,6 @@ function App() {
       const response = await fetch(`${import.meta.env.VITE_API_URL}/Book`)
       const data = await response.json()
       console.log('Datos recibidos de la API:', {
-        status: response.status,
-        statusText: response.statusText,
-        headers: Object.fromEntries(response.headers.entries()),
         data: data
       })
       setBooks(data)
