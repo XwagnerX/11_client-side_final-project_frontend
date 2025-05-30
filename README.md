@@ -1,18 +1,18 @@
 # Book Collection Manager
 
-Una aplicación web moderna para gestionar tu colección de libros, construida con React y Vite.
+A modern web application for managing your book collection, built with React and Vite.
 
-## 🚀 Características
+## 🚀 Features
 
-- 📚 Gestión completa de libros (CRUD)
-- 🎨 Interfaz moderna y responsive
-- ⚡ Fast Refresh con Vite
-- ✅ Tests automatizados
-- 🔄 Integración continua con GitHub Actions
-- 🛡️ Validaciones y manejo de errores
-- 📱 Diseño adaptable a todos los dispositivos
+- 📚 Complete book management (CRUD)
+- 🎨 Modern and responsive interface
+- ⚡ Fast Refresh with Vite
+- ✅ Automated tests
+- 🔄 Continuous integration with GitHub Actions
+- 🛡️ Validations and error handling
+- 📱 Design adaptable to all devices
 
-## 🛠️ Tecnologías
+## 🛠️ Technologies
 
 - React 19
 - Vite 6
@@ -21,58 +21,58 @@ Una aplicación web moderna para gestionar tu colección de libros, construida c
 - Husky + lint-staged
 - GitHub Actions
 
-## 📋 Prerrequisitos
+## 📋 Prerequisites
 
-- Node.js (versión 18 o superior)
-- npm o yarn
+- Node.js (version 18 or higher)
+- npm or yarn
 
-## 🔧 Instalación
+## 🔧 Installation
 
-1. Clona el repositorio:
+1. Clone the repository:
 ```bash
 git clone https://github.com/XwagnerX/11_client-side_final-project_frontend.git
 ```
 
-2. Instala las dependencias:
+2. Install dependencies:
 ```bash
 npm install
 ```
 
-3. Crea un archivo `.env` en la raíz del proyecto:
+3. Create a `.env` file in the project root:
 ```env
-VITE_API_URL=http://tu-api-url
+VITE_API_URL=http://your-api-url
 ```
 
-## 🚀 Scripts Disponibles
+## 🚀 Available Scripts
 
-- `npm run dev` - Inicia el servidor de desarrollo
-- `npm run build` - Construye la aplicación para producción
-- `npm run preview` - Previsualiza la build de producción
-- `npm run test` - Ejecuta los tests
-- `npm run lint` - Ejecuta el linter
+- `npm run dev` - Start the development server
+- `npm run build` - Build the application for production
+- `npm run preview` - Preview the production build
+- `npm run test` - Run tests
+- `npm run lint` - Run the linter
 
 ## 🧪 Testing
 
-El proyecto utiliza Vitest y React Testing Library para testing. Los tests cubren:
+The project uses Vitest and React Testing Library for testing. Tests cover:
 
-- Componentes principales (BookCard, BookForm, BookList)
-- Interacciones de usuario
-- Manejo de estados
-- Llamadas a la API
+- Main components (BookCard, BookForm, BookList)
+- User interactions
+- State management
+- API calls
 
-Para ejecutar los tests:
+To run the tests:
 ```bash
 npm test
 ```
 
 ## 🔄 CI/CD
 
-- Husky para git hooks
-- lint-staged para validación de código
-- GitHub Actions para integración continua
-- Despliegue automático en Netlify
+- Husky for git hooks
+- lint-staged for code validation
+- GitHub Actions for continuous integration
+- Automatic deployment on Netlify
 
-## 📦 Estructura del Proyecto
+## 📦 Project Structure
 
 ```
 src/
@@ -86,23 +86,19 @@ src/
 └── main.jsx
 ```
 
-## 🌐 Despliegue
+## 🌐 Deployment
 
-La aplicación está desplegada en Netlify y es accesible en: [URL del despliegue]
+The application is deployed on Netlify and is accessible at: [Deployment URL]
 
-## 🤝 Contribución
+## 🤝 Contributing
 
-1. Fork el proyecto
-2. Crea tu rama de feature (`git checkout -b feature/AmazingFeature`)
-3. Commit tus cambios (`git commit -m 'Add some AmazingFeature'`)
-4. Push a la rama (`git push origin feature/AmazingFeature`)
-5. Abre un Pull Request
+1. Fork the project
+2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
 
-## 📝 Licencia
-
-Este proyecto está bajo la Licencia MIT - ver el archivo [LICENSE.md](LICENSE.md) para más detalles.
-
-## ✨ Agradecimientos
+## ✨ Acknowledgments
 
 - [Vite](https://vitejs.dev/)
 - [React](https://reactjs.org/)
