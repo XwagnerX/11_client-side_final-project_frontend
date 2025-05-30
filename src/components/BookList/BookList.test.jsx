@@ -1,8 +1,10 @@
 import { render, screen, fireEvent, waitFor } from '@testing-library/react';
+import { describe, test, expect, vi, beforeEach } from 'vitest';
+import { act } from 'react';
 import BookList from './BookList';
 
 // Mock fetch
-global.fetch = jest.fn();
+global.fetch = vi.fn();
 
 describe('BookList Component', () => {
   const mockBooks = [
@@ -23,24 +25,30 @@ describe('BookList Component', () => {
   ];
 
   beforeEach(() => {
-    jest.clearAllMocks();
+    vi.clearAllMocks();
     fetch.mockResolvedValue({
       json: () => Promise.resolve(mockBooks)
     });
   });
 
-  test('renders book list title', () => {
-    render(<BookList />);
+  test('renders book list title', async () => {
+    await act(async () => {
+      render(<BookList />);
+    });
     expect(screen.getByText('My Book Collection')).toBeInTheDocument();
   });
 
-  test('renders add book button', () => {
-    render(<BookList />);
+  test('renders add book button', async () => {
+    await act(async () => {
+      render(<BookList />);
+    });
     expect(screen.getByText('Add New Book')).toBeInTheDocument();
   });
 
   test('fetches and displays books', async () => {
-    render(<BookList />);
+    await act(async () => {
+      render(<BookList />);
+    });
     
     await waitFor(() => {
       expect(screen.getByText('Test Book 1')).toBeInTheDocument();
@@ -48,10 +56,14 @@ describe('BookList Component', () => {
     });
   });
 
-  test('shows form when add book button is clicked', () => {
-    render(<BookList />);
+  test('shows form when add book button is clicked', async () => {
+    await act(async () => {
+      render(<BookList />);
+    });
     
-    fireEvent.click(screen.getByText('Add New Book'));
+    await act(async () => {
+      fireEvent.click(screen.getByText('Add New Book'));
+    });
     
     expect(screen.getByLabelText('Title:')).toBeInTheDocument();
     expect(screen.getByLabelText('Author:')).toBeInTheDocument();
@@ -66,14 +78,18 @@ describe('BookList Component', () => {
       ok: true
     }));
 
-    render(<BookList />);
+    await act(async () => {
+      render(<BookList />);
+    });
     
     await waitFor(() => {
       expect(screen.getByText('Test Book 1')).toBeInTheDocument();
     });
 
-    const deleteButtons = screen.getAllByText('Delete');
-    fireEvent.click(deleteButtons[0]);
+    await act(async () => {
+      const deleteButtons = screen.getAllByText('Delete');
+      fireEvent.click(deleteButtons[0]);
+    });
 
     await waitFor(() => {
       expect(fetch).toHaveBeenCalledWith(expect.stringContaining('/Book/1'), {

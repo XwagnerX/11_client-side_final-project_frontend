@@ -1,4 +1,5 @@
 import { render, screen, fireEvent } from '@testing-library/react';
+import { describe, test, expect, vi, beforeEach } from 'vitest';
 import BookCard from './BookCard';
 
 describe('BookCard Component', () => {
@@ -10,11 +11,11 @@ describe('BookCard Component', () => {
     status: 'pending'
   };
 
-  const mockOnEdit = jest.fn();
-  const mockOnDelete = jest.fn();
+  const mockOnEdit = vi.fn();
+  const mockOnDelete = vi.fn();
 
   beforeEach(() => {
-    jest.clearAllMocks();
+    vi.clearAllMocks();
   });
 
   test('renders book information correctly', () => {

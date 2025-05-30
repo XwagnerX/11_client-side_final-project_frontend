@@ -1,4 +1,5 @@
 import { render, screen, fireEvent } from '@testing-library/react';
+import { describe, test, expect, vi, beforeEach } from 'vitest';
 import BookForm from './BookForm';
 
 describe('BookForm Component', () => {
@@ -6,15 +7,15 @@ describe('BookForm Component', () => {
     id: 1,
     title: 'Test Book',
     author: 'Test Author',
-    year: '2024',
+    year: 2024,
     status: 'pending'
   };
 
-  const mockOnSubmit = jest.fn();
-  const mockOnCancel = jest.fn();
+  const mockOnSubmit = vi.fn();
+  const mockOnCancel = vi.fn();
 
   beforeEach(() => {
-    jest.clearAllMocks();
+    vi.clearAllMocks();
   });
 
   test('renders form with empty fields when no book is provided', () => {

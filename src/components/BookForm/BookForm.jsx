@@ -17,6 +17,9 @@ const BookForm = ({ book, onSubmit, onCancel }) => {
 
   const handleChange = (e) => {
     const { name, value } = e.target;
+    if (name === 'year' && value !== '' && !/^\d+$/.test(value)) {
+      return;
+    }
     setFormData(prev => ({
       ...prev,
       [name]: value
@@ -59,11 +62,13 @@ const BookForm = ({ book, onSubmit, onCancel }) => {
       <div className={styles.formGroup}>
         <label htmlFor="year">Year:</label>
         <input
-          type="number"
+          type="text"
           id="year"
           name="year"
           value={formData.year}
           onChange={handleChange}
+          pattern="\d*"
+          inputMode="numeric"
           required
         />
       </div>
