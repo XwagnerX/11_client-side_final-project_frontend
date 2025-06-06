@@ -30,4 +30,13 @@ export default [
       ],
     },
   },
+  // Excepción para archivos de test
+  {
+    files: ['**/*.test.js', '**/*.test.jsx'],
+    languageOptions: {
+      globals: {
+        global: 'readonly',
+      },
+    },
+  },
 ]
